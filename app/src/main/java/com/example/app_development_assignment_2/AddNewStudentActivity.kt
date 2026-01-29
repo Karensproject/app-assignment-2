@@ -13,12 +13,12 @@ import com.example.app_development_assignment_2.model.Model
 import com.example.app_development_assignment_2.model.Student
 
 class AddNewStudentActivity : AppCompatActivity() {
-    private lateinit var nameTextField: EditText
-    private lateinit var idTextField: EditText
-    private lateinit var phoneTextField: EditText
-    private lateinit var addressTextField: EditText
-    private lateinit var isSelectedCheckBox: CheckBox
-    private lateinit var saveButton: Button
+    private lateinit var studentNameEditText: EditText
+    private lateinit var studentIdEditText: EditText
+    private lateinit var studentPhoneEditText: EditText
+    private lateinit var studentAddressEditText: EditText
+    private lateinit var studentIsSelectedCheckBox: CheckBox
+    private lateinit var saveStudentButton: Button
     private lateinit var cancelButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,31 +31,30 @@ class AddNewStudentActivity : AppCompatActivity() {
             insets
         }
 
-        idTextField = findViewById(R.id.add_student_activity_id_edit_text)
-        nameTextField = findViewById(R.id.add_student_activity_name_edit_text)
-        phoneTextField = findViewById(R.id.add_student_activity_phone_edit_text)
-        addressTextField = findViewById(R.id.add_student_activity_address_edit_text)
-        isSelectedCheckBox = findViewById(R.id.add_student_activity_checked_checkbox)
-        saveButton = findViewById(R.id.add_student_activity_save_button)
+        studentIdEditText = findViewById(R.id.add_student_activity_id_edit_text)
+        studentNameEditText = findViewById(R.id.add_student_activity_name_edit_text)
+        studentPhoneEditText = findViewById(R.id.add_student_activity_phone_edit_text)
+        studentAddressEditText = findViewById(R.id.add_student_activity_address_edit_text)
+        studentIsSelectedCheckBox = findViewById(R.id.add_student_activity_checked_checkbox)
+        saveStudentButton = findViewById(R.id.add_student_activity_save_button)
         cancelButton = findViewById(R.id.add_student_activity_cancel_button)
-        saveButton.setOnClickListener(::onSave)
-        cancelButton.setOnClickListener(::onCancel)
+        saveStudentButton.setOnClickListener(::saveStudent)
+        cancelButton.setOnClickListener(::cancel)
     }
 
-    private fun onSave(view: View) {
-        val name = nameTextField.text.toString()
-        val id = idTextField.text.toString()
-        val phone = phoneTextField.text.toString()
-        val address = addressTextField.text.toString()
-        val isSelected = isSelectedCheckBox.isChecked
-
-        val student = Student(name, id, phone, address, isSelected)
+    private fun saveStudent(view: View) {
+        val student = Student(
+            name = studentNameEditText.text.toString(),
+            id = studentIdEditText.text.toString(),
+            phone = studentPhoneEditText.text.toString(),
+            address = studentAddressEditText.text.toString(),
+            isSelected = studentIsSelectedCheckBox.isChecked
+        )
         Model.shared.students.add(student)
-
         finish()
     }
 
-    private fun onCancel(view: View) {
+    private fun cancel(view: View) {
         finish()
     }
 }
