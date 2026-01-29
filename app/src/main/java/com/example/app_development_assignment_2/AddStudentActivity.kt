@@ -1,4 +1,4 @@
-package com.example.app_development_assignment_2
+package com.example.maya-and-karen-second-assignment
 
 import android.os.Bundle
 import android.view.View
@@ -9,24 +9,27 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.app_development_assignment_2.model.Model
-import com.example.app_development_assignment_2.model.Student
+import com.example.maya-and-karen-second-assignment.model.Model
+import com.example.maya-and-karen-second-assignment.model.Student
 
 class AddStudentActivity : AppCompatActivity() {
-    private lateinit var nameTextField: EditText
+    private lateinit var saveButton: Button
+    private lateinit var cancelButton: Button
     private lateinit var idTextField: EditText
+    private lateinit var nameTextField: EditText
     private lateinit var phoneTextField: EditText
     private lateinit var addressTextField: EditText
     private lateinit var isCheckedCheckBox: CheckBox
-    private lateinit var saveButton: Button
-    private lateinit var cancelButton: Button
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_add_student)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
@@ -36,6 +39,7 @@ class AddStudentActivity : AppCompatActivity() {
         phoneTextField = findViewById(R.id.add_student_activity_phone_edit_text)
         addressTextField = findViewById(R.id.add_student_activity_address_edit_text)
         isCheckedCheckBox = findViewById(R.id.add_student_activity_checked_checkbox)
+
         saveButton = findViewById(R.id.add_student_activity_save_button)
         cancelButton = findViewById(R.id.add_student_activity_cancel_button)
         saveButton.setOnClickListener(::onSave)
