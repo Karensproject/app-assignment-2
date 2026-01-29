@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".EditStudentDetails">
+    tools:context=".AddStudentActivity">
 
     <ImageView
         android:id="@+id/profile_image"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_student_details_activity_name_edit_text"
+            android:id="@+id/add_student_activity_name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/name_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_student_details_activity_id_edit_text"
+            android:id="@+id/add_student_activity_id_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/id_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_student_details_activity_phone_edit_text"
+            android:id="@+id/add_student_activity_phone_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone" />
@@ -82,13 +82,13 @@
         app:layout_constraintTop_toBottomOf="@+id/phone_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_student_details_activity_address_edit_text"
+            android:id="@+id/add_student_activity_address_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
-        android:id="@+id/edit_student_details_activity_checked_checkbox"
+        android:id="@+id/add_student_activity_checked_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -97,34 +97,25 @@
         app:layout_constraintTop_toBottomOf="@+id/address_input_layout" />
 
     <Button
-        android:id="@+id/edit_student_details_activity_update_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="@color/save_button_green"
-        android:text="Update"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edit_student_details_activity_delete_button" />
-
-    <Button
-        android:id="@+id/edit_student_details_activity_delete_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/cancel_button_red"
-        android:text="Delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/edit_student_details_activity_update_button"
-        app:layout_constraintStart_toEndOf="@+id/edit_student_details_activity_cancel_button" />
-
-    <Button
-        android:id="@+id/edit_student_details_activity_cancel_button"
+        android:id="@+id/add_student_activity_save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/save_button_green"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/add_student_activity_cancel_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/add_student_activity_cancel_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/cancel_button_red"
         android:text="Cancel"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/edit_student_details_activity_delete_button"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_save_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
