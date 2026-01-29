@@ -1,4 +1,4 @@
-package com.example.app_development_assignment_2.model
+package com.example.maya-and-karen-second-assignment.model
 
 data class Student (
     val name: String,

@@ -1,17 +1,18 @@
-package com.example.app_development_assignment_2.adapter
+package com.example.maya-and-karen-second-assignment.adapter
 
 import android.view.View
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app_development_assignment_2.R
-import com.example.app_development_assignment_2.model.Student
+import com.example.maya-and-karen-second-assignment.R
+import com.example.maya-and-karen-second-assignment.model.Student
 
 class StudentsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    private var nameTextView: TextView? = null
-    private var idTextView: TextView? = null
-    private var checkBox: CheckBox? = null
     private var student: Student? = null
+    private var checkBox: CheckBox? = null
+    private var idTextView: TextView? = null
+    private var nameTextView: TextView? = null
+    
 
     init {
         nameTextView = itemView.findViewById(R.id.student_row_name_text_view)

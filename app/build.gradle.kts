@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.app_development_assignment_2"
+    namespace = "com.example.maya-and-karen-second-assignment"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.app_development_assignment_2"
+        applicationId = "com.example.maya-and-karen-second-assignment"
         minSdk = 29
         targetSdk = 35
         versionCode = 1

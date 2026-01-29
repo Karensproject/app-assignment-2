@@ -1,12 +1,12 @@
-package com.example.app_development_assignment_2.adapter
+package com.example.maya-and-karen-second-assignment.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app_development_assignment_2.R
-import com.example.app_development_assignment_2.StudentDetailsActivity
-import com.example.app_development_assignment_2.model.Student
+import com.example.maya-and-karen-second-assignment.R
+import com.example.maya-and-karen-second-assignment.StudentDetailsActivity
+import com.example.maya-and-karen-second-assignment.model.Student
 
 class StudentsRecyclerAdapter(private val students: ArrayList<Student>) : RecyclerView.Adapter<StudentsViewHolder>() {
     override fun getItemCount(): Int = students.size
@@ -21,12 +21,15 @@ class StudentsRecyclerAdapter(private val students: ArrayList<Student>) : Recycl
     override fun onBindViewHolder(holder: StudentsViewHolder, position: Int) {
         holder.bind(students[position], position)
         val student = students[position]
+
         holder.itemView.apply {
             setOnClickListener {
                 val context = it.context
+
                 val intent = Intent(context, StudentDetailsActivity::class.java).apply {
                     putExtra("studentPosition", position)
                 }
+
                 context.startActivity(intent)
             }
         }

@@ -1,4 +1,4 @@
-package com.example.app_development_assignment_2
+package com.example.maya-and-karen-second-assignment
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app_development_assignment_2.adapter.StudentsRecyclerAdapter
-import com.example.app_development_assignment_2.model.Model
-import com.example.app_development_assignment_2.model.Student
+import com.example.maya-and-karen-second-assignment.adapter.StudentsRecyclerAdapter
+import com.example.maya-and-karen-second-assignment.model.Model
+import com.example.maya-and-karen-second-assignment.model.Student
+
 
 class MainActivity : AppCompatActivity() {
     private var students = ArrayList<Student>()
@@ -19,10 +20,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
@@ -41,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
         students = Model.shared.students
         (studentsRecyclerView.adapter as StudentsRecyclerAdapter).notifyDataSetChanged()
     }
