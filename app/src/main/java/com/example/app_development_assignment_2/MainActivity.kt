@@ -2,6 +2,7 @@ package com.example.app_development_assignment_2
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.app_development_assignment_2.adapter.StudentsRecyclerAdapter
 import com.example.app_development_assignment_2.model.Model
 import com.example.app_development_assignment_2.model.Student
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     private var students = ArrayList<Student>()
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         studentsRecyclerView.layoutManager = LinearLayoutManager(this)
         studentsRecyclerView.adapter = StudentsRecyclerAdapter(students)
 
-        val addStudentButton = findViewById<FloatingActionButton>(R.id.main_activity_add_student_button)
+        val addStudentButton = findViewById<Button>(R.id.main_activity_add_student_button)
         addStudentButton.setOnClickListener {
             startActivity(Intent(this, AddStudentActivity::class.java))
         }

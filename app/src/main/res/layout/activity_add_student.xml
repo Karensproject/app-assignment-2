@@ -5,125 +5,117 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".AddStudentActivity">
 
     <ImageView
-        android:id="@+id/edit_student_details_activity_image_view"
-        android:layout_width="172dp"
-        android:layout_height="155dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/user_profile"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/panda" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/add_student_activity_address_text_view"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Address"
-        app:layout_constraintStart_toStartOf="@+id/add_student_activity_phone_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_phone_text_view" />
+        android:layout_marginTop="16dp"
+        android:hint="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image">
 
-    <TextView
-        android:id="@+id/add_student_activity_name_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="@+id/edit_student_details_activity_image_view"
-        app:layout_constraintTop_toBottomOf="@+id/edit_student_details_activity_image_view" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_student_activity_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/add_student_activity_id_text_view"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/id_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Id"
-        app:layout_constraintStart_toStartOf="@+id/add_student_activity_name_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_name_text_view" />
+        android:layout_marginTop="8dp"
+        android:hint="ID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_input_layout">
 
-    <TextView
-        android:id="@+id/add_student_activity_phone_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Phone"
-        app:layout_constraintStart_toStartOf="@+id/add_student_activity_id_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_id_text_view" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_student_activity_id_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/add_student_activity_checked_text_view"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Checked"
-        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_checked_checkbox"
-        app:layout_constraintStart_toStartOf="@+id/add_student_activity_address_edit_text" />
+        android:layout_marginTop="8dp"
+        android:hint="Phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_input_layout">
 
-    <EditText
-        android:id="@+id/add_student_activity_address_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_address_text_view"
-        app:layout_constraintStart_toStartOf="@+id/add_student_activity_phone_edit_text" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_student_activity_phone_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/add_student_activity_name_edit_text"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/address_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_name_text_view"
-        app:layout_constraintStart_toEndOf="@+id/add_student_activity_name_text_view" />
+        android:layout_marginTop="8dp"
+        android:hint="Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_input_layout">
 
-    <EditText
-        android:id="@+id/add_student_activity_id_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_id_text_view"
-        app:layout_constraintStart_toStartOf="@+id/add_student_activity_name_edit_text" />
-
-    <EditText
-        android:id="@+id/add_student_activity_phone_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_phone_text_view"
-        app:layout_constraintStart_toStartOf="@+id/add_student_activity_id_edit_text" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_student_activity_address_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/add_student_activity_checked_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="@+id/add_student_activity_phone_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/add_student_activity_address_text_view" />
-
-    <Button
-        android:id="@+id/add_student_activity_cancel_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="Cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/add_student_activity_save_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="16dp"
+        android:text="Selected"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_input_layout" />
 
     <Button
         android:id="@+id/add_student_activity_save_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/save_button_green"
         android:text="Save"
-        app:layout_constraintBaseline_toBaselineOf="@+id/add_student_activity_cancel_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/add_student_activity_cancel_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/add_student_activity_cancel_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/cancel_button_red"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/add_student_activity_cancel_button" />
+        app:layout_constraintStart_toEndOf="@+id/add_student_activity_save_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

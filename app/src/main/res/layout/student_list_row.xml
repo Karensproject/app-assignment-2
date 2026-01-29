@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/panda" />
+        app:srcCompat="@drawable/user_profile" />
 
     <TextView
         android:id="@+id/student_row_name_text_view"
