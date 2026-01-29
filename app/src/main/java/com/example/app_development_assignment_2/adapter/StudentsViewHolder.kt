@@ -21,7 +21,7 @@ class StudentsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         checkBox?.apply {
             setOnClickListener { view ->
                 (tag as? Int)?.let {
-                    student?.isChecked = (view as? CheckBox)?.isChecked ?: false
+                    student?.isSelected = (view as? CheckBox)?.isChecked ?: false
                 }
             }
         }
@@ -35,7 +35,7 @@ class StudentsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         nameTextView?.text = student?.name
         idTextView?.text = student?.id
         checkBox?.apply {
-            isChecked = student?.isChecked ?: false
+            isChecked = student?.isSelected ?: false
             tag = position
         }
     }

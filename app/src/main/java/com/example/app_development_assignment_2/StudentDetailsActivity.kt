@@ -62,7 +62,7 @@ class StudentDetailsActivity : AppCompatActivity() {
             studentIdTextView.text = studentIdTextView.text.toString() + it.id
             studentPhoneTextView.text = studentPhoneTextView.text.toString() + it.phone
             studentAddressTextView.text = studentAddressTextView.text.toString() + it.address
-            studentCheckedCheckBox.isSelected = it.isChecked
+            studentCheckedCheckBox.isSelected = it.isSelected
         }
     }
 

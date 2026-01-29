@@ -53,7 +53,7 @@ class EditStudentDetails : AppCompatActivity() {
         idTextField.text.append(student.id)
         phoneTextField.text.append(student.phone)
         addressTextField.text.append(student.address)
-        isCheckedCheckBox.isChecked = student.isChecked
+        isCheckedCheckBox.isChecked = student.isSelected
     }
     private fun onSave(view: View) {
         val name = nameTextField.text.toString()
